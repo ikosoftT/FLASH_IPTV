@@ -1,15 +1,18 @@
-import { MessageCircle } from "lucide-react";
 import { whatsappUrl } from "@/lib/whatsapp";
+import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 
 export function WhatsAppButton() {
   return (
     <a
       href={whatsappUrl()}
-      className="fixed bottom-4 right-4 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full border border-emerald-300/30 bg-emerald-500 text-white shadow-[0_20px_60px_rgba(16,185,129,0.28)] transition hover:-translate-y-0.5 hover:bg-emerald-400 sm:w-auto sm:px-5"
-      aria-label="WhatsApp Support"
+      className="group fixed bottom-4 right-4 z-50 grid h-14 w-14 place-items-center rounded-full border border-emerald-200/35 bg-gradient-to-br from-emerald-400 via-emerald-500 to-emerald-700 text-white shadow-[0_22px_70px_rgba(16,185,129,0.38)] transition hover:-translate-y-0.5 hover:shadow-[0_26px_80px_rgba(16,185,129,0.5)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-300"
+      aria-label="Open WhatsApp chat"
+      target="_blank"
+      rel="noreferrer"
     >
-      <MessageCircle className="h-5 w-5" aria-hidden="true" />
-      <span className="ml-2 hidden text-sm font-semibold sm:inline">WhatsApp Support</span>
+      <span className="absolute inset-0 rounded-full bg-emerald-400/35 opacity-70 animate-ping" aria-hidden="true" />
+      <span className="absolute inset-0 rounded-full bg-white/10 opacity-0 transition group-hover:opacity-100" aria-hidden="true" />
+      <WhatsAppIcon className="relative h-7 w-7 drop-shadow" />
     </a>
   );
 }

@@ -4,18 +4,18 @@ import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { Container } from "@/components/ui/Container";
 import { FadeUp } from "@/components/ui/Motion";
-import { StreamingMockup } from "@/components/ui/StreamingMockup";
 import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
+import { HeroShowcase } from "@/components/ui/HeroShowcase";
 import { whatsappUrl } from "@/lib/whatsapp";
 
 export function Hero() {
   return (
-    <section className="stadium-bg relative overflow-hidden pb-16 pt-14 sm:pt-20 lg:pb-24 lg:pt-24">
+    <section className="stadium-bg relative min-h-[calc(100svh-5rem)] overflow-hidden pb-16 pt-14 sm:pt-20 lg:flex lg:items-center lg:pb-20 lg:pt-20">
       <div className="absolute inset-0 -z-10">
         <ImageWithFallback
           src={assets.heroStadium}
           alt="Generic premium stadium lights background"
-          className="absolute inset-0 h-full w-full opacity-70"
+          className="absolute inset-0 h-full w-full opacity-58"
           imgClassName="object-cover object-center"
           fallbackClassName="hidden"
           sizes="100vw"
@@ -23,22 +23,29 @@ export function Hero() {
         >
           <span />
         </ImageWithFallback>
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/92 via-ink/66 to-ink/20" />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/30 via-transparent to-ink/92" />
-        <div className="absolute left-0 top-10 h-96 w-96 rounded-full bg-field/20 blur-[120px]" />
-        <div className="absolute right-0 top-24 h-96 w-96 rounded-full bg-electric/20 blur-[130px]" />
+        <div className="hero-animated-bg absolute inset-0" aria-hidden="true">
+          <span className="hero-aurora hero-aurora-one" />
+          <span className="hero-aurora hero-aurora-two" />
+          <span className="hero-aurora hero-aurora-three" />
+          <span className="hero-light-beam hero-light-beam-left" />
+          <span className="hero-light-beam hero-light-beam-right" />
+          <span className="hero-scanlines" />
+        </div>
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,7,13,0.96)_0%,rgba(5,7,13,0.78)_44%,rgba(5,7,13,0.34)_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/68 via-transparent to-ink" />
+        <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-ink to-transparent" />
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-champagne to-transparent" />
       </div>
       <Container>
-        <div className="grid items-center gap-10 lg:grid-cols-[1.12fr_0.88fr]">
-          <FadeUp>
+        <div className="grid items-center gap-10 lg:grid-cols-[1.02fr_0.98fr] xl:gap-14">
+          <FadeUp className="relative z-10">
             <Badge>World Cup 2026 ready streaming</Badge>
-            <h1 className="mt-6 text-balance text-4xl font-semibold leading-[1.04] tracking-normal text-white sm:text-6xl lg:text-7xl">
-              Flash 4K IPTV - Premium Live TV, Sports & <span className="gold-text">World Cup Streaming</span>
+            <h1 className="mt-6 max-w-4xl text-balance text-4xl font-semibold leading-[1.02] tracking-normal text-white sm:text-6xl lg:text-7xl">
+              Flash 4K IPTV for <span className="gold-text">premium live sports</span>, movies & 4K entertainment
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-platinum/74 sm:text-xl">
-              Get match-day ready with premium IPTV access for live football, international sports, movies, series,
-              and 26,000+ channels across every device.
+              A modern IPTV experience for live football, international sports, movies, series, and 26,000+ channels
+              with fast WhatsApp activation across every major device.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button href={whatsappUrl()} size="lg">
@@ -61,24 +68,8 @@ export function Hero() {
             </div>
           </FadeUp>
 
-          <FadeUp className="relative mx-auto w-full max-w-[520px] lg:ml-auto" style={{ transitionDelay: "120ms" }}>
-            <ImageWithFallback
-              src={assets.heroDashboard}
-              alt="Generic Flash 4K IPTV streaming dashboard mockup"
-              className="aspect-[0.92] w-full rounded-[1.6rem]"
-              imgClassName="object-contain"
-              fallbackClassName="h-full w-full"
-              sizes="(max-width: 1024px) 92vw, 520px"
-              priority
-            >
-              <StreamingMockup />
-            </ImageWithFallback>
-            <div className="absolute -left-3 top-10 hidden rounded-full border border-live/30 bg-live/15 px-4 py-2 text-xs font-bold text-live backdrop-blur-xl sm:block">
-              LIVE
-            </div>
-            <div className="absolute -right-2 bottom-16 hidden rounded-full border border-champagne/30 bg-champagne/15 px-4 py-2 text-xs font-bold text-champagne backdrop-blur-xl sm:block">
-              26,000+ Channels
-            </div>
+          <FadeUp className="relative z-10" style={{ transitionDelay: "120ms" }}>
+            <HeroShowcase />
           </FadeUp>
         </div>
       </Container>

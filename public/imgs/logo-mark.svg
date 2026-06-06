@@ -1,0 +1,24 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="256" height="256" rx="64" fill="#05070D"/>
+  <rect x="9" y="9" width="238" height="238" rx="55" fill="url(#paint0_radial)" stroke="url(#paint1_linear)" stroke-width="2"/>
+  <path d="M142 24L62 143H116L101 232L195 106H139L142 24Z" fill="url(#paint2_linear)"/>
+  <path d="M157 153H190V172H205V191H190V215H167V191H118V173L157 153ZM168 172L150 172.1L150.1 172H168Z" fill="#F6F8FB"/>
+  <path d="M214 153H237L211 184L238 215H212L190 188L214 153Z" fill="#D8B46A"/>
+  <defs>
+    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(73 50) rotate(48.6) scale(238 230)">
+      <stop stop-color="#16A34A" stop-opacity="0.4"/>
+      <stop offset="0.45" stop-color="#48A7FF" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#080D18"/>
+    </radialGradient>
+    <linearGradient id="paint1_linear" x1="30" y1="20" x2="230" y2="242" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5DF9C"/>
+      <stop offset="0.46" stop-color="#48A7FF"/>
+      <stop offset="1" stop-color="#16A34A"/>
+    </linearGradient>
+    <linearGradient id="paint2_linear" x1="65" y1="27" x2="190" y2="228" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF4C7"/>
+      <stop offset="0.5" stop-color="#D8B46A"/>
+      <stop offset="1" stop-color="#48A7FF"/>
+    </linearGradient>
+  </defs>
+</svg>

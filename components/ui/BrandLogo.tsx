@@ -29,15 +29,15 @@ export function BrandLogo({ variant = "full", className, textClassName }: BrandL
   }
 
   return (
-    <div className={cn("flex items-center gap-3", className)}>
-      {mark}
+    <div className={cn("flex items-center", className)}>
       <ImageWithFallback
         src={assets.logo}
         alt={`${brand.name} logo`}
-        className="hidden h-10 w-36 sm:block"
+        className="hidden h-12 w-44 sm:block"
         imgClassName="object-contain object-left"
-        fallbackClassName="flex items-center"
+        fallbackClassName="flex items-center gap-3"
       >
+        {mark}
         <span className={cn("text-base font-semibold tracking-normal text-white", textClassName)}>
           {brand.shortName}
         </span>

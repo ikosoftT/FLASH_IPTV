@@ -51,9 +51,9 @@ const logoSources = (...basePaths: string[]) =>
 
 const remoteImages = {
   heroStadium:
-    "https://images.unsplash.com/photo-1608154119029-53f3c6ad12e4?auto=format&fit=crop&w=1800&q=80",
+    "https://images.unsplash.com/photo-1546643122-72107a618ac2?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   heroDashboard:
-    "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=1400&q=80",
+    "https://images.unsplash.com/photo-1649731929606-cb8a84d7006e?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   sportsBg:
     "https://images.unsplash.com/photo-1608154119029-53f3c6ad12e4?auto=format&fit=crop&w=1800&q=80",
   devices:
@@ -139,14 +139,14 @@ export const navLinks = [
 ];
 
 export const contact = {
-  email: "support@flash4kiptv.example",
-  whatsappNumber: "10000000000",
+  email: "support@flash4kiptv.com",
+  whatsappNumber: "+447828717974",
   whatsappBaseUrl: "https://wa.me",
   defaultWhatsAppMessage:
     "Hello Flash 4K IPTV, I want help choosing an IPTV package. Please send me the available plans.",
   liveChat: "/support#contact",
   checkout: "/pricing#plans",
-  responseTime: "Average WhatsApp response within 15 minutes",
+  responseTime: "Average WhatsApp response within 2 minutes",
   supportHours: "24/7 Flash 4K IPTV Support"
 };
 

@@ -14,5 +14,8 @@ export function formatCurrency(value: number) {
 }
 
 export function absoluteUrl(path = "") {
-  return `https://flash4kiptv.example${path}`;
+  const siteUrl = "https://flash4kiptv.it.com";
+  const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+
+  return `${siteUrl}${normalizedPath}`;
 }
