@@ -16,6 +16,9 @@ export const metadata: Metadata = createMetadata({
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+      </head>
       <body className="font-sans antialiased">
         <AnnouncementBar />
         <Navbar />

@@ -3,6 +3,7 @@ import { blogPosts } from "@/lib/data";
 import { absoluteUrl } from "@/lib/utils";
 
 const staticRoutes = ["/", "/channels", "/features", "/pricing", "/blog", "/support"];
+const lastModified = new Date("2026-06-07T00:00:00.000Z");
 const sitemapSlugs = [
   "setup-iptv-on-smart-tv",
   "install-iptv-on-fire-stick",
@@ -24,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [...staticRoutes, ...blogRoutes].map((route) => ({
     url: absoluteUrl(route),
-    lastModified: new Date(),
+    lastModified,
     changeFrequency: route === "/" ? "weekly" : "monthly",
     priority: route === "/" ? 1 : 0.7
   }));
