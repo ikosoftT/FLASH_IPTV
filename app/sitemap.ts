@@ -1,12 +1,28 @@
 import type { MetadataRoute } from "next";
-import { blogPosts, navLinks } from "@/lib/data";
+import { blogPosts } from "@/lib/data";
 import { absoluteUrl } from "@/lib/utils";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseRoutes = ["/", ...navLinks.map((link) => link.href)];
-  const blogRoutes = blogPosts.map((post) => `/blog/${post.slug}`);
+const staticRoutes = ["/", "/channels", "/features", "/pricing", "/blog", "/support"];
+const sitemapSlugs = [
+  "setup-iptv-on-smart-tv",
+  "install-iptv-on-fire-stick",
+  "setup-iptv-on-android-tv",
+  "why-iptv-buffers-and-how-to-fix-it",
+  "best-internet-speed-for-4k-iptv-streaming",
+  "use-epg-tv-guide-with-iptv",
+  "iptv-not-working-common-problems-fixes",
+  "watch-iptv-on-iphone-and-ipad",
+  "watch-iptv-on-windows-or-mac",
+  "choose-best-iptv-plan-for-devices",
+  "prepare-iptv-before-big-sports-match",
+  "smart-tv-vs-fire-stick-vs-android-box-iptv"
+];
 
-  return [...baseRoutes, ...blogRoutes].map((route) => ({
+export default function sitemap(): MetadataRoute.Sitemap {
+  const liveBlogSlugs = new Set(blogPosts.map((post) => post.slug));
+  const blogRoutes = sitemapSlugs.filter((slug) => liveBlogSlugs.has(slug)).map((slug) => `/blog/${slug}`);
+
+  return [...staticRoutes, ...blogRoutes].map((route) => ({
     url: absoluteUrl(route),
     lastModified: new Date(),
     changeFrequency: route === "/" ? "weekly" : "monthly",

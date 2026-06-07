@@ -19,6 +19,14 @@ export function createMetadata({ title, description, path = "/" }: SeoInput): Me
     alternates: {
       canonical: url
     },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true
+      }
+    },
     icons: {
       icon: [
         { url: "/favicon.svg", type: "image/svg+xml" },
