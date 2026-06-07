@@ -140,7 +140,7 @@ export const navLinks = [
 
 export const contact = {
   email: "support@flash4kiptv.com",
-  whatsappNumber: "+447828717974",
+  whatsappNumber: "+447828714977",
   whatsappBaseUrl: "https://wa.me",
   defaultWhatsAppMessage:
     "Hello Flash 4K IPTV, I want help choosing an IPTV package. Please send me the available plans.",
