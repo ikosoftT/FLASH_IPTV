@@ -1,5 +1,6 @@
-import { trustItems } from "@/lib/data";
 import { Container } from "@/components/ui/Container";
+
+const trustItems = ["24/7 WhatsApp Support", "HD / FHD / 4K", "Fast Activation", "All Major Devices"];
 
 export function TrustBar() {
   return (
@@ -7,9 +8,9 @@ export function TrustBar() {
       <Container>
         <div className="grid gap-4 py-5 sm:grid-cols-2 lg:grid-cols-4">
           {trustItems.map((item) => (
-            <div key={item.label} className="flex items-center justify-center gap-3 text-sm font-medium text-platinum/70">
-              <item.icon className="h-4 w-4 text-champagne" aria-hidden="true" />
-              {item.label}
+            <div key={item} className="flex items-center justify-center gap-3 text-sm font-medium text-platinum/70">
+              <span className="h-2 w-2 rounded-full bg-champagne" aria-hidden="true" />
+              {item}
             </div>
           ))}
         </div>

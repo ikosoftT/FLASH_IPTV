@@ -1,4 +1,3 @@
-import { CheckCircle2, MessageCircle, PlayCircle } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
@@ -9,18 +8,15 @@ import { whatsappUrl } from "@/lib/whatsapp";
 const steps = [
   {
     title: "Choose your package",
-    description: "Select 1, 2, or 3 devices and pick 3, 6, or 12 months.",
-    icon: CheckCircle2
+    description: "Select 1, 2, or 3 devices and pick 3, 6, or 12 months."
   },
   {
     title: "Message us on WhatsApp",
-    description: "Your selected plan opens with package details prefilled.",
-    icon: MessageCircle
+    description: "Your selected plan opens with package details prefilled."
   },
   {
     title: "Start watching",
-    description: "Receive activation details and setup guidance for your device.",
-    icon: PlayCircle
+    description: "Receive activation details and setup guidance for your device."
   }
 ];
 
@@ -39,8 +35,8 @@ export function SetupSteps() {
           {steps.map((step, index) => (
             <Card key={step.title}>
               <div className="flex items-center justify-between">
-                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-field/15 text-field">
-                  <step.icon className="h-6 w-6" aria-hidden="true" />
+                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-field/15 text-lg font-black text-field">
+                  {index + 1}
                 </span>
                 <span className="text-4xl font-semibold text-white/10">0{index + 1}</span>
               </div>

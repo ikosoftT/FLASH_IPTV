@@ -1,78 +1,106 @@
-import { ArrowRight } from "lucide-react";
-import { assets, heroStats } from "@/lib/data";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowRight,
+  faBolt,
+  faDesktop,
+  faFire,
+  faMobileScreenButton,
+  faSatelliteDish,
+  faTabletScreenButton,
+  faTv
+} from "@fortawesome/free-solid-svg-icons";
+import { contact, homeImages } from "@/lib/data";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { Container } from "@/components/ui/Container";
 import { FadeUp } from "@/components/ui/Motion";
-import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
-import { HeroShowcase } from "@/components/ui/HeroShowcase";
+import { HeroBackgroundRotator } from "@/components/ui/HeroBackgroundRotator";
 import { whatsappUrl } from "@/lib/whatsapp";
+
+const devices = ["Smart TV", "Fire Stick", "Android TV", "iPhone", "iPad", "MAG", "PC"];
+const deviceIcons = [faTv, faFire, faBolt, faMobileScreenButton, faTabletScreenButton, faSatelliteDish, faDesktop];
 
 export function Hero() {
   return (
-    <section className="stadium-bg relative min-h-[calc(100svh-5rem)] overflow-hidden pb-16 pt-14 sm:pt-20 lg:flex lg:items-center lg:pb-20 lg:pt-20">
+    <section className="relative isolate -mt-[4.75rem] min-h-[100svh] overflow-hidden pt-[4.75rem] sm:-mt-[5.5rem] sm:pt-[5.5rem]">
       <div className="absolute inset-0 -z-10">
-        <ImageWithFallback
-          src={assets.heroStadium}
-          alt="Generic premium stadium lights background"
-          className="absolute inset-0 h-full w-full opacity-58"
-          imgClassName="object-cover object-center"
-          fallbackClassName="hidden"
-          sizes="100vw"
-          priority
-        >
-          <span />
-        </ImageWithFallback>
-        <div className="hero-animated-bg absolute inset-0" aria-hidden="true">
-          <span className="hero-aurora hero-aurora-one" />
-          <span className="hero-aurora hero-aurora-two" />
-          <span className="hero-aurora hero-aurora-three" />
-          <span className="hero-light-beam hero-light-beam-left" />
-          <span className="hero-light-beam hero-light-beam-right" />
-          <span className="hero-scanlines" />
-        </div>
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,7,13,0.96)_0%,rgba(5,7,13,0.78)_44%,rgba(5,7,13,0.34)_100%)]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/68 via-transparent to-ink" />
-        <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-ink to-transparent" />
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-champagne to-transparent" />
+        <HeroBackgroundRotator
+          slides={homeImages.heroSlides}
+          alt="Family watching a movie on a large TV in a dark living room"
+        />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,rgba(255,255,255,0.06),transparent_26rem),linear-gradient(180deg,rgba(5,7,13,0.28)_0%,rgba(5,7,13,0.62)_34%,rgba(5,7,13,0.92)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,7,13,0.82),rgba(5,7,13,0.42)_48%,rgba(5,7,13,0.82))]" />
+        <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-ink via-ink/88 to-transparent" />
       </div>
-      <Container>
-        <div className="grid items-center gap-10 lg:grid-cols-[1.02fr_0.98fr] xl:gap-14">
-          <FadeUp className="relative z-10">
-            <Badge>World Cup 2026 ready streaming</Badge>
-            <h1 className="mt-6 max-w-4xl text-balance text-4xl font-semibold leading-[1.02] tracking-normal text-white sm:text-6xl lg:text-7xl">
-              Flash 4K IPTV for <span className="gold-text">premium live sports</span>, movies & 4K entertainment
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-platinum/74 sm:text-xl">
-              A modern IPTV experience for live football, international sports, movies, series, and 26,000+ channels
-              with fast WhatsApp activation across every major device.
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button href={whatsappUrl()} size="lg">
-                Get Started on WhatsApp
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </Button>
-              <Button href="/pricing#plans" variant="secondary" size="lg">
-                View Packages
-              </Button>
-            </div>
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              {heroStats.map((item) => (
-                <div key={item.label} className="flex items-center gap-3 text-sm text-platinum/70">
-                  <span className="grid h-9 w-9 place-items-center rounded-full border border-white/12 bg-white/[0.06] text-champagne shadow-glow">
-                    <item.icon className="h-4 w-4" aria-hidden="true" />
-                  </span>
-                  {item.label}
-                </div>
-              ))}
-            </div>
-          </FadeUp>
 
-          <FadeUp className="relative z-10" style={{ transitionDelay: "120ms" }}>
-            <HeroShowcase />
-          </FadeUp>
-        </div>
+      <Container className="flex min-h-[calc(100svh-4.75rem)] items-center justify-center pb-9 pt-10 sm:min-h-[calc(100svh-5.5rem)] sm:pb-14 sm:pt-16 lg:pt-20">
+        <FadeUp className="mx-auto w-full max-w-[980px] text-center">
+          <Badge className="border-champagne/24 bg-ink/38 px-4 py-1.5 text-champagne shadow-[0_18px_50px_rgba(216,180,106,0.12)] backdrop-blur-2xl">
+            Premium 4K IPTV Streaming
+          </Badge>
+          <h1 className="hero-title-modern mx-auto mt-5 max-w-5xl text-balance text-5xl font-black leading-[0.92] tracking-normal text-white min-[380px]:text-6xl sm:mt-6 sm:text-7xl md:text-8xl lg:text-[6.8rem]">
+            <span className="hero-title-gold block">Flash 4K IPTV</span>
+            <span className="hero-title-white mt-3 block sm:mt-4">Cinema at Home</span>
+            <span className="hero-title-spectrum block">Sports. Series. Live TV.</span>
+          </h1>
+          <div className="mx-auto mt-5 flex max-w-2xl flex-wrap items-center justify-center gap-2 text-[0.72rem] font-black uppercase tracking-normal text-champagne sm:mt-6 sm:text-xs">
+            <span className="rounded-full border border-champagne/22 bg-champagne/10 px-3 py-1.5">Movies</span>
+            <span className="rounded-full border border-champagne/22 bg-champagne/10 px-3 py-1.5">Live Sports</span>
+            <span className="rounded-full border border-champagne/22 bg-champagne/10 px-3 py-1.5">Series</span>
+            <span className="rounded-full border border-champagne/22 bg-champagne/10 px-3 py-1.5">4K VOD</span>
+          </div>
+          <p className="hero-copy mx-auto mt-5 max-w-3xl text-[0.98rem] leading-7 text-platinum/84 sm:mt-6 sm:text-xl sm:leading-8">
+            Turn your home into a premium entertainment room with <span>gold-standard IPTV access</span> for movies,
+            live matches, binge-worthy series, family nights, and 4K-ready viewing.
+          </p>
+
+          <div className="mt-7 flex flex-col items-stretch justify-center gap-3 sm:mt-8 sm:flex-row sm:items-center">
+            <Button href="#pricing-preview" size="lg" className="min-h-12 px-7">
+              View Plans
+              <FontAwesomeIcon icon={faArrowRight} className="h-4 w-4" aria-hidden="true" />
+            </Button>
+            <Button
+              href={whatsappUrl(contact.trialWhatsAppMessage)}
+              variant="secondary"
+              size="lg"
+              className="min-h-12 px-7"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Start Free Trial
+            </Button>
+          </div>
+
+          <div className="mx-auto mt-6 flex max-w-2xl flex-wrap items-center justify-center gap-2.5 sm:mt-8 sm:gap-3" aria-label="Supported device icons">
+            {devices.map((device, index) => {
+              const Icon = deviceIcons[index];
+              return (
+                <span
+                  key={device}
+                  className="group relative grid h-11 w-11 place-items-center rounded-full border border-white/14 bg-white/[0.075] text-champagne shadow-[0_18px_50px_rgba(0,0,0,0.28)] backdrop-blur-2xl transition hover:-translate-y-1 hover:border-champagne/42 hover:bg-white/[0.12] sm:h-12 sm:w-12"
+                  aria-label={device}
+                  title={device}
+                >
+                  <FontAwesomeIcon icon={Icon} className="h-5 w-5 transition group-hover:scale-110" aria-hidden="true" />
+                  <span className="sr-only">{device}</span>
+                </span>
+              );
+            })}
+            <span
+              className="group relative grid h-11 w-11 place-items-center rounded-full border border-live/24 bg-live/10 text-live shadow-[0_18px_50px_rgba(255,54,94,0.16)] backdrop-blur-2xl transition hover:-translate-y-1 hover:border-live/45 hover:bg-live/16 sm:h-12 sm:w-12"
+              aria-label="Live streaming"
+              title="Live streaming"
+            >
+              <FontAwesomeIcon icon={faFire} className="h-5 w-5 transition group-hover:scale-110" aria-hidden="true" />
+              <span className="sr-only">Live streaming</span>
+            </span>
+          </div>
+        </FadeUp>
       </Container>
+
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center pb-5" aria-hidden="true">
+        <span className="h-10 w-px bg-gradient-to-b from-champagne/0 via-champagne/70 to-champagne/0" />
+      </div>
     </section>
   );
 }

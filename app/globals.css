@@ -19,6 +19,7 @@ html {
 
 body {
   min-height: 100vh;
+  overflow-x: hidden;
   background:
     radial-gradient(circle at 15% 4%, rgba(22, 163, 74, 0.16), transparent 30rem),
     radial-gradient(circle at 78% 8%, rgba(72, 167, 255, 0.16), transparent 28rem),
@@ -75,6 +76,43 @@ button {
   color: transparent;
 }
 
+.hero-title-modern {
+  text-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.04),
+    0 26px 80px rgba(0, 0, 0, 0.72);
+}
+
+.hero-title-gold {
+  position: relative;
+  color: transparent;
+  background:
+    linear-gradient(100deg, #fff8d5 0%, #f6d775 22%, #d8b46a 45%, #fff1b8 62%, #b88634 86%, #fff8d5 100%);
+  background-size: 180% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(0 18px 54px rgba(216, 180, 106, 0.22));
+}
+
+.hero-title-white {
+  color: #fffdfa;
+  text-shadow:
+    0 0 28px rgba(255, 255, 255, 0.14),
+    0 22px 80px rgba(0, 0, 0, 0.78);
+}
+
+.hero-title-spectrum {
+  color: transparent;
+  background: linear-gradient(100deg, #f7f8fb 0%, #d8b46a 28%, #48a7ff 62%, #ff365e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(0 18px 58px rgba(72, 167, 255, 0.16));
+}
+
+.hero-copy span {
+  color: #f5df9c;
+  font-weight: 800;
+}
+
 .stadium-bg {
   background:
     radial-gradient(circle at 18% 18%, rgba(22, 163, 74, 0.26), transparent 26rem),
@@ -110,6 +148,38 @@ button {
 
 .float-soft {
   animation: float-soft 6s ease-in-out infinite;
+}
+
+.reveal-static {
+  animation: reveal-static 0.55s ease-out both;
+}
+
+.stagger-static > * {
+  animation: reveal-static 0.5s ease-out both;
+}
+
+.stagger-static > *:nth-child(2) {
+  animation-delay: 45ms;
+}
+
+.stagger-static > *:nth-child(3) {
+  animation-delay: 90ms;
+}
+
+.stagger-static > *:nth-child(4) {
+  animation-delay: 135ms;
+}
+
+.stagger-static > *:nth-child(n + 5) {
+  animation-delay: 180ms;
+}
+
+.mobile-menu-drop {
+  animation: mobile-menu-drop 0.18s ease-out both;
+}
+
+.hero-bg-fade {
+  animation: hero-bg-fade 1.2s ease-out both;
 }
 
 .nav-luxury-shell {
@@ -259,6 +329,56 @@ button {
   isolation: isolate;
 }
 
+.cinematic-fallback-bg {
+  background:
+    radial-gradient(ellipse at 50% 42%, rgba(255, 255, 255, 0.12), transparent 20rem),
+    radial-gradient(ellipse at 50% 62%, rgba(72, 167, 255, 0.22), transparent 26rem),
+    radial-gradient(circle at 22% 22%, rgba(216, 180, 106, 0.2), transparent 20rem),
+    linear-gradient(180deg, #05070d 0%, #111827 44%, #05070d 100%);
+}
+
+.cinematic-fallback-bg::before {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  height: 34%;
+  width: min(58rem, 82vw);
+  content: "";
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 1.35rem;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(72, 167, 255, 0.24), transparent 42%),
+    linear-gradient(135deg, rgba(255, 54, 94, 0.22), rgba(72, 167, 255, 0.22));
+  box-shadow:
+    0 0 90px rgba(72, 167, 255, 0.24),
+    0 28px 100px rgba(0, 0, 0, 0.42);
+  transform: translateX(-50%);
+}
+
+.cinematic-fallback-bg::after {
+  position: absolute;
+  left: 50%;
+  bottom: 12%;
+  height: 16%;
+  width: min(44rem, 74vw);
+  content: "";
+  border-radius: 9999px 9999px 0 0;
+  background:
+    radial-gradient(ellipse at center, rgba(255, 255, 255, 0.12), transparent 62%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08), rgba(5, 7, 13, 0.82), rgba(255, 255, 255, 0.08));
+  filter: blur(1px);
+  transform: translateX(-50%);
+}
+
+.poster-card::before {
+  position: absolute;
+  inset: 0.75rem;
+  content: "";
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.85rem;
+  pointer-events: none;
+}
+
 @keyframes live-pulse {
   0%,
   100% {
@@ -342,6 +462,39 @@ button {
   }
   50% {
     transform: translateY(-10px);
+  }
+}
+
+@keyframes reveal-static {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes mobile-menu-drop {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -8px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes hero-bg-fade {
+  from {
+    opacity: 0;
+    transform: scale(1.015);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 

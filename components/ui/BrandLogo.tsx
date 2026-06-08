@@ -1,9 +1,7 @@
-"use client";
-
-import { Zap } from "lucide-react";
-import { assets, brand } from "@/lib/data";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBolt, faPlay } from "@fortawesome/free-solid-svg-icons";
+import { brand } from "@/lib/data";
 import { cn } from "@/lib/utils";
-import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 
 type BrandLogoProps = {
   variant?: "full" | "mark";
@@ -13,38 +11,29 @@ type BrandLogoProps = {
 
 export function BrandLogo({ variant = "full", className, textClassName }: BrandLogoProps) {
   const mark = (
-    <ImageWithFallback
-      src={assets.logoMark}
-      alt={`${brand.name} logo mark`}
-      className="h-10 w-10 rounded-full"
-      imgClassName="object-contain"
-      fallbackClassName="grid place-items-center rounded-full border border-champagne/35 bg-champagne/10 text-champagne shadow-gold"
-    >
-      <Zap className="h-5 w-5 fill-current" aria-hidden="true" />
-    </ImageWithFallback>
+    <span className="relative grid h-10 w-10 shrink-0 place-items-center rounded-2xl border border-champagne/38 bg-[radial-gradient(circle_at_28%_18%,rgba(255,255,255,0.28),transparent_34%),linear-gradient(135deg,#f8df91,#d8b46a_48%,#9d7430)] text-ink shadow-[0_16px_50px_rgba(216,180,106,0.24)] sm:h-11 sm:w-11">
+      <span className="absolute -right-1 -top-1 grid h-4 w-4 place-items-center rounded-full bg-live text-[0.42rem] text-white shadow-[0_0_18px_rgba(255,54,94,0.75)]" aria-hidden="true">
+        <FontAwesomeIcon icon={faPlay} />
+      </span>
+      <FontAwesomeIcon icon={faBolt} className="h-4 w-4 sm:h-5 sm:w-5" aria-hidden="true" />
+    </span>
   );
 
   if (variant === "mark") {
-    return <div className={className}>{mark}</div>;
+    return <span className={className}>{mark}</span>;
   }
 
   return (
-    <div className={cn("flex items-center", className)}>
-      <ImageWithFallback
-        src={assets.logo}
-        alt={`${brand.name} logo`}
-        className="hidden h-12 w-44 sm:block"
-        imgClassName="object-contain object-left"
-        fallbackClassName="flex items-center gap-3"
-      >
-        {mark}
-        <span className={cn("text-base font-semibold tracking-normal text-white", textClassName)}>
-          {brand.shortName}
+    <span className={cn("inline-flex min-w-0 items-center gap-2.5", className)} aria-label={brand.name}>
+      {mark}
+      <span className={cn("leading-none", textClassName)}>
+        <span className="block whitespace-nowrap text-[1.05rem] font-black tracking-normal text-champagne drop-shadow-[0_8px_24px_rgba(216,180,106,0.22)] sm:text-[1.35rem]">
+          Flash 4K
         </span>
-      </ImageWithFallback>
-      <span className={cn("text-base font-semibold tracking-normal text-white sm:hidden", textClassName)}>
-        {brand.shortName}
+        <span className="mt-0.5 block whitespace-nowrap text-[0.72rem] font-black uppercase tracking-[0.18em] text-[#ffe7a3] sm:text-[0.78rem]">
+          IPTV
+        </span>
       </span>
-    </div>
+    </span>
   );
 }

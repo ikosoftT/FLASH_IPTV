@@ -12,8 +12,8 @@ export function PricingPreview() {
         <FadeUp>
           <SectionHeading
             eyebrow="Packages"
-            title="World Cup-ready IPTV packages with WhatsApp activation"
-            description="Select 1, 2, or 3 devices and choose from 3-month, 6-month, or best-value 12-month access. No unsupported 1-month plan."
+            title="Choose the Flash 4K IPTV package for your screens"
+            description="Select 1, 2, or 3 devices and choose from 3-month, 6-month, or best-value 12-month access. Activation and setup happen through WhatsApp."
           />
         </FadeUp>
         <div className="mt-10">

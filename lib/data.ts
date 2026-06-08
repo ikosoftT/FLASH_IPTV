@@ -97,8 +97,21 @@ const remoteImages = {
   blogPlans:
     "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
   blogSports:
-    "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=1200&q=80"
+    "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=1200&q=80",
+  homeMovieNight:
+    "https://images.unsplash.com/photo-1756729924301-4e55f111e986?auto=format&fit=crop&w=1800&q=80",
+  homeFinalMovieNight:
+    "https://images.unsplash.com/photo-1756729924301-4e55f111e986?auto=format&fit=crop&w=1600&q=78",
+  homeCinemaSeats:
+    "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1800&q=80",
+  homeTvRoom:
+    "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=1800&q=80",
+  homeSportsNight:
+    "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=1800&q=80"
 };
+
+const wikimediaFile = (fileName: string, width = 520) =>
+  `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(fileName)}?width=${width}`;
 
 export const brand = {
   name: "Flash 4K IPTV",
@@ -125,9 +138,18 @@ export const assets = {
   supportSetup: [remoteImages.support, ...visualSources("/imgs/support-setup", "/imgs/support", "/imgs/setup")]
 };
 
-export const visualDisclaimers = {
-  popularLineup:
-    "Names shown are popular categories and channel names users often look for. Display does not imply official affiliation, licensing, guaranteed availability, or partnership."
+export const homeImages = {
+  heroBackground: ["/imgs/hero-family-movie-night-optimized.webp", "/imgs/hero-family-movie-night.jpg", remoteImages.homeMovieNight],
+  heroSlides: [
+    ["/imgs/hero-family-movie-night-optimized.webp", "/imgs/hero-family-movie-night.jpg", remoteImages.homeMovieNight],
+    [remoteImages.homeCinemaSeats],
+    [remoteImages.homeTvRoom],
+    [remoteImages.homeSportsNight]
+  ],
+  moviesSeries: [remoteImages.channelsMovies],
+  liveSports: [remoteImages.channelsSports],
+  devicesLineup: [remoteImages.devices],
+  finalCtaBackground: [remoteImages.homeFinalMovieNight]
 };
 
 export const navLinks = [
@@ -144,6 +166,8 @@ export const contact = {
   whatsappBaseUrl: "https://wa.me",
   defaultWhatsAppMessage:
     "Hello Flash 4K IPTV, I want help choosing an IPTV package. Please send me the available plans.",
+  trialWhatsAppMessage:
+    "Hello Flash 4K IPTV, I want to ask about the free trial.\n\nPlease help me test the service.",
   liveChat: "/support#contact",
   checkout: "/pricing#plans",
   responseTime: "Average WhatsApp response within 2 minutes",
@@ -291,6 +315,21 @@ export const vodTiles = [
   "Premium Sports",
   "Documentary Plus",
   "Kids Zone"
+];
+
+export const streamingPosterCards = [
+  { title: "Metropolis", category: "Public domain", gradient: "from-live/70 via-aura/36 to-electric/24", image: [...visualSources("/imgs/posters/metropolis"), wikimediaFile("Boris Bilinski - Filmplakat für Metropolis.jpg")] },
+  { title: "The General", category: "Public domain", gradient: "from-champagne/62 via-field/30 to-electric/24", image: [...visualSources("/imgs/posters/the-general"), wikimediaFile("The General (1926) - Movie Poster.png")] },
+  { title: "Plan 9", category: "Public domain", gradient: "from-field/64 via-electric/28 to-champagne/24", image: [...visualSources("/imgs/posters/plan-9"), wikimediaFile("Plan 9 from Outer Space, poster, gtfy.07034.jpg")] },
+  { title: "The Kid", category: "Public domain", gradient: "from-electric/58 via-aura/34 to-live/22", image: [...visualSources("/imgs/posters/the-kid"), wikimediaFile("The Kid (1921) poster.jpg")] },
+  { title: "Count Dracula", category: "Public domain", gradient: "from-champagne/66 via-live/24 to-electric/24", image: [...visualSources("/imgs/posters/count-dracula"), wikimediaFile("Count Dracula (1970) US poster.jpg")] },
+  { title: "Charade", category: "Public domain", gradient: "from-platinum/38 via-field/30 to-aura/24", image: [...visualSources("/imgs/posters/charade"), wikimediaFile("Charade (1963 poster).jpg")] },
+  { title: "Caligari", category: "Public domain", gradient: "from-electric/54 via-platinum/28 to-field/22", image: [...visualSources("/imgs/posters/caligari"), wikimediaFile("CABINETOFDRCALIGARI-poster.jpg")] },
+  { title: "Phantom", category: "Public domain", gradient: "from-aura/62 via-champagne/28 to-live/22", image: [...visualSources("/imgs/posters/phantom"), wikimediaFile("The Phantom of the Opera (1925).jpg")] },
+  { title: "His Girl Friday", category: "Public domain", gradient: "from-field/68 via-live/26 to-champagne/24", image: [...visualSources("/imgs/posters/his-girl-friday"), wikimediaFile("His Girl Friday (1940 poster) crop.jpg")] },
+  { title: "Action Night", category: "Movies", gradient: "from-live/46 via-aura/36 to-platinum/22", image: [...visualSources("/imgs/posters/action-night"), remoteImages.channelsMovies] },
+  { title: "Sports Live", category: "Live TV", gradient: "from-electric/60 via-champagne/28 to-aura/26", image: [...visualSources("/imgs/posters/sports-live"), remoteImages.channelsSports] },
+  { title: "Family Cinema", category: "Family", gradient: "from-aura/50 via-field/28 to-electric/24", image: [...visualSources("/imgs/posters/family-cinema"), remoteImages.homeMovieNight] }
 ];
 
 export const devices = [

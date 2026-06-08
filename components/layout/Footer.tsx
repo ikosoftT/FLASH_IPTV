@@ -9,8 +9,8 @@ export function Footer() {
       <Container className="py-14">
         <div className="grid gap-10 lg:grid-cols-[1.25fr_2fr]">
           <div>
-            <Link href="/" className="flex items-center gap-3" aria-label={`${brand.name} home`}>
-              <BrandLogo textClassName="text-lg" />
+            <Link href="/" className="group inline-flex" aria-label={`${brand.name} home`}>
+              <BrandLogo textClassName="sm:[&>span:first-child]:text-2xl" />
             </Link>
             <p className="mt-5 max-w-md text-sm leading-7 text-platinum/64">{brand.description}</p>
             <p className="mt-5 max-w-lg text-xs leading-6 text-platinum/45">{brand.disclaimer}</p>

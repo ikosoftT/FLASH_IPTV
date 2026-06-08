@@ -1,4 +1,3 @@
-import { ArrowRight } from "lucide-react";
 import { channelCategories } from "@/lib/data";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
@@ -35,7 +34,9 @@ export function ChannelsPreview() {
                 </div>
               </ImageWithFallback>
               <div className="p-5">
-                <category.icon className="h-5 w-5 text-champagne" aria-hidden="true" />
+                <span className="inline-flex rounded-full border border-champagne/24 bg-champagne/10 px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.12em] text-champagne">
+                  {category.type}
+                </span>
                 <h3 className="mt-4 text-lg font-semibold text-white">{category.title}</h3>
                 <p className="mt-2 line-clamp-2 text-sm leading-6 text-platinum/56">{category.description}</p>
                 <p className="mt-2 text-sm text-platinum/58">{category.count} channels / titles</p>
@@ -46,7 +47,6 @@ export function ChannelsPreview() {
         <div className="mt-10 flex justify-center">
           <Button href="/channels" variant="secondary">
             Explore 26,000+ Channels
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Button>
         </div>
       </Container>

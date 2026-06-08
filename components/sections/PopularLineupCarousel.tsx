@@ -1,4 +1,4 @@
-import { popularLineup, visualDisclaimers } from "@/lib/data";
+import { popularLineup } from "@/lib/data";
 import { ChannelLogoPill } from "@/components/ui/ChannelLogoPill";
 import { Container } from "@/components/ui/Container";
 
@@ -9,12 +9,11 @@ export function PopularLineupCarousel() {
       <Container>
         <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-champagne">Popular lineup</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-champagne">Channel categories</p>
             <h2 id="popular-lineup-title" className="mt-2 text-2xl font-semibold text-white">
-              Glass lineup for sports, cinema & premium entertainment
+              A premium strip for sports, cinema, series, news & family viewing
             </h2>
           </div>
-          <p className="max-w-xl text-xs leading-6 text-platinum/45">{visualDisclaimers.popularLineup}</p>
         </div>
         <div
           className="logo-carousel-shell relative overflow-hidden rounded-[1.65rem] border border-white/12 bg-white/[0.035] p-4 shadow-[0_26px_90px_rgba(0,0,0,0.32)] backdrop-blur-2xl"

@@ -1,6 +1,5 @@
 "use client";
 
-import { CheckCircle2, ShieldCheck } from "lucide-react";
 import { useMemo, useState } from "react";
 import { pricingConfig } from "@/lib/data";
 import { cn, formatCurrency } from "@/lib/utils";
@@ -86,7 +85,7 @@ export function PricingCalculator({ preview = false }: { preview?: boolean }) {
               <ul className="mt-6 flex-1 space-y-3">
                 {pricingConfig.includedFeatures.map((feature) => (
                   <li key={feature} className="flex gap-3 text-sm leading-6 text-platinum/70">
-                    <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-field" aria-hidden="true" />
+                    <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-field shadow-[0_0_14px_rgba(22,163,74,0.45)]" aria-hidden="true" />
                     {feature}
                   </li>
                 ))}
@@ -107,7 +106,7 @@ export function PricingCalculator({ preview = false }: { preview?: boolean }) {
         <div className="mt-8 grid gap-4 sm:grid-cols-4">
           {["Fast activation", "WhatsApp checkout", "All devices supported", "7-day money-back guarantee"].map((item) => (
             <div key={item} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.045] p-4 text-sm text-platinum/72">
-              <ShieldCheck className="h-5 w-5 text-champagne" aria-hidden="true" />
+              <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-champagne" aria-hidden="true" />
               {item}
             </div>
           ))}

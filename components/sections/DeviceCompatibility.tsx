@@ -1,4 +1,5 @@
-import { Monitor, Smartphone, Tablet, Tv } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDesktop, faMobileScreenButton, faTabletScreenButton, faTv } from "@fortawesome/free-solid-svg-icons";
 import { assets, devices } from "@/lib/data";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
@@ -6,7 +7,7 @@ import { FadeUp } from "@/components/ui/Motion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 
-const deviceIcons = [Tv, Smartphone, Tablet, Monitor];
+const deviceIcons = [faTv, faMobileScreenButton, faTabletScreenButton, faDesktop];
 
 export function DeviceCompatibility() {
   return (
@@ -17,7 +18,7 @@ export function DeviceCompatibility() {
             <SectionHeading
               align="left"
               eyebrow="Compatibility"
-              title="Live TV across every screen before kickoff"
+              title="Movies, series, sports, and live TV across every screen"
               description="Watch on Smart TV, Fire Stick, Android TV, iPhone, iPad, MAG Box, Windows, Mac, and compatible IPTV player apps."
             />
           </FadeUp>
@@ -36,13 +37,13 @@ export function DeviceCompatibility() {
                   <div className="h-28 w-36 rounded-2xl border-4 border-platinum/20 bg-ink/80 shadow-glow" />
                 </div>
               </ImageWithFallback>
-              <div className="grid gap-4 p-5 sm:grid-cols-2">
+              <div className="grid grid-cols-2 gap-3 p-4 sm:gap-4 sm:p-5">
                 {devices.map((device, index) => {
-                  const Icon = deviceIcons[index % deviceIcons.length];
+                  const icon = deviceIcons[index % deviceIcons.length];
                   return (
-                    <div key={device} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.045] p-4">
-                      <Icon className="h-5 w-5 text-electric" aria-hidden="true" />
-                      <span className="text-sm font-medium text-platinum/78">{device}</span>
+                    <div key={device} className="flex min-h-14 items-center gap-2.5 rounded-xl border border-white/10 bg-white/[0.045] p-3 sm:gap-3 sm:rounded-2xl sm:p-4">
+                      <FontAwesomeIcon icon={icon} className="h-4 w-4 shrink-0 text-electric sm:h-5 sm:w-5" aria-hidden="true" />
+                      <span className="text-xs font-medium leading-snug text-platinum/78 sm:text-sm">{device}</span>
                     </div>
                   );
                 })}
