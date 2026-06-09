@@ -91,7 +91,7 @@ export function PricingCalculator({ preview = false }: { preview?: boolean }) {
                 ))}
               </ul>
               <Button
-                href={whatsappPlanUrl({ label: card.label, price: card.price, devices })}
+                href={whatsappPlanUrl({ label: card.label, devices })}
                 className="mt-7 w-full"
                 variant={best ? "primary" : "secondary"}
               >

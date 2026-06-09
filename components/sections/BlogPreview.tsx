@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { blogPosts } from "@/lib/data";
+import { blogPosts } from "@/lib/blog-data";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
 import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
@@ -13,9 +13,9 @@ export function BlogPreview() {
       <Container>
         <FadeUp>
           <SectionHeading
-            eyebrow="IPTV guides"
-            title="Helpful setup guides before the big match"
-            description="Practical IPTV articles for Smart TV, Fire Stick, Android TV, EPG setup, buffering fixes, and choosing the right package."
+            eyebrow="World Cup IPTV guides"
+            title="Fresh match-day advice for World Cup 2026"
+            description="Practical IPTV articles for 4K sports, low latency, Smart TV, Fire Stick, EPG setup, buffering fixes, and choosing the right package."
           />
         </FadeUp>
         <div className="mt-12 grid gap-4 lg:grid-cols-3">

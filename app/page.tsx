@@ -1,3 +1,4 @@
+import { BlogPreview } from "@/components/sections/BlogPreview";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Hero } from "@/components/sections/Hero";
 import { PricingPreview } from "@/components/sections/PricingPreview";
@@ -13,6 +14,7 @@ export default function HomePage() {
       <StreamingPosterCarousel />
       <PopularLineupCarousel />
       <PricingPreview />
+      <BlogPreview />
       <FinalCTA />
     </>
   );

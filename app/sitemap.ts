@@ -1,10 +1,22 @@
 import type { MetadataRoute } from "next";
-import { blogPosts } from "@/lib/data";
+import { blogPosts } from "@/lib/blog-data";
 import { absoluteUrl } from "@/lib/utils";
 
-const staticRoutes = ["/", "/channels", "/features", "/pricing", "/blog", "/support"];
-const lastModified = new Date("2026-06-07T00:00:00.000Z");
+const staticRoutes = ["/", "/channels", "/features", "/pricing", "/free-trial", "/blog", "/support"];
+const lastModified = new Date("2026-06-09T00:00:00.000Z");
 const sitemapSlugs = [
+  "world-cup-2026-iptv-trends",
+  "prepare-iptv-for-104-world-cup-matches",
+  "best-devices-world-cup-2026-iptv",
+  "4k-hdr-world-cup-streaming-iptv-setup",
+  "low-latency-iptv-live-football",
+  "world-cup-2026-time-zones-iptv-guide",
+  "epg-favorites-world-cup-2026-iptv",
+  "multi-screen-iptv-world-cup-households",
+  "avoid-buffering-world-cup-2026",
+  "smart-tv-fire-stick-world-cup-iptv",
+  "travel-viewing-world-cup-2026-iptv",
+  "legal-reliable-world-cup-iptv-checklist",
   "setup-iptv-on-smart-tv",
   "install-iptv-on-fire-stick",
   "setup-iptv-on-android-tv",
