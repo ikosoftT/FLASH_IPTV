@@ -118,7 +118,7 @@ export function PricingCalculator({ preview = false }: { preview?: boolean }) {
                   ))}
                 </ul>
                 <Button
-                  href={whatsappPlanUrl({ label: `${tier.name} (${card.label})`, devices })}
+                  href={whatsappPlanUrl({ label: tier.name, devices })}
                   className={cn(
                     "mt-8 w-full min-h-[3.5rem] text-base font-semibold shadow-lg",
                     best ? "bg-champagne text-ink hover:bg-white shadow-champagne/25" : "bg-white/10 text-white hover:bg-white/20 border border-white/10"

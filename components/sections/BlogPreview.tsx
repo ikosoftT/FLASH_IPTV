@@ -31,7 +31,7 @@ export function BlogPreview() {
                   <div className="relative overflow-hidden h-52 sm:h-60">
                     <ImageWithFallback
                       src={post.coverImage}
-                      alt={post.title}
+                      alt={`Featured image for ${post.title} article`}
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                       fallbackClassName="bg-gradient-to-br from-ink via-black to-ink"
                       sizes="(max-width: 1024px) 100vw, 33vw"
