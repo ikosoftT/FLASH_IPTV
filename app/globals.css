@@ -50,8 +50,19 @@ button {
   backdrop-filter: blur(18px);
 }
 
+.glass-premium {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(24px);
+}
+
 .luxury-border {
   border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.luxury-border-subtle {
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .text-balance {
@@ -71,6 +82,13 @@ button {
 
 .blue-text {
   background: linear-gradient(135deg, #dff1ff, #48a7ff 55%, #8b5cf6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gold-text-subtle {
+  background: linear-gradient(135deg, #e8d48b, #c8a84e 50%, #f0e0a0);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -127,6 +145,13 @@ button {
     linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
     radial-gradient(circle at center, rgba(22, 163, 74, 0.2), transparent 58%);
   background-size: 34px 34px, 34px 34px, cover;
+}
+
+.premium-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px, 60px 60px;
 }
 
 .live-pulse {
@@ -379,133 +404,111 @@ button {
   pointer-events: none;
 }
 
+.device-icon-card {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.device-icon-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(216, 180, 106, 0.3);
+  box-shadow: 0 12px 40px rgba(216, 180, 106, 0.12);
+}
+
+.pricing-card {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 32px 100px rgba(0, 0, 0, 0.35);
+}
+
+.pricing-card-featured {
+  position: relative;
+  background: linear-gradient(135deg, rgba(216, 180, 106, 0.1), rgba(72, 167, 255, 0.05), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(216, 180, 106, 0.3);
+  box-shadow: 0 24px 80px rgba(216, 180, 106, 0.1), 0 0 60px rgba(216, 180, 106, 0.05);
+}
+
+.pricing-card-featured::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(216, 180, 106, 0.4), rgba(72, 167, 255, 0.2), transparent);
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.trust-chip {
+  transition: all 0.3s ease;
+}
+
+.trust-chip:hover {
+  background: rgba(216, 180, 106, 0.08);
+  border-color: rgba(216, 180, 106, 0.25);
+  transform: translateY(-2px);
+}
+
 @keyframes live-pulse {
-  0%,
-  100% {
-    opacity: 0.72;
-    transform: scale(0.95);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.08);
-  }
+  0%, 100% { opacity: 0.72; transform: scale(0.95); }
+  50% { opacity: 1; transform: scale(1.08); }
 }
 
 @keyframes hero-aurora {
-  from {
-    transform: translate3d(-1rem, -0.5rem, 0) scale(0.96);
-  }
-  to {
-    transform: translate3d(1.4rem, 1rem, 0) scale(1.08);
-  }
+  from { transform: translate3d(-1rem, -0.5rem, 0) scale(0.96); }
+  to { transform: translate3d(1.4rem, 1rem, 0) scale(1.08); }
 }
 
 @keyframes hero-beam {
-  from {
-    opacity: 0.12;
-    transform: translate3d(-1.5rem, 0, 0) rotate(var(--beam-rotate, 17deg));
-  }
-  to {
-    opacity: 0.22;
-    transform: translate3d(1.5rem, 0, 0) rotate(var(--beam-rotate, 17deg));
-  }
+  from { opacity: 0.12; transform: translate3d(-1.5rem, 0, 0) rotate(var(--beam-rotate, 17deg)); }
+  to { opacity: 0.22; transform: translate3d(1.5rem, 0, 0) rotate(var(--beam-rotate, 17deg)); }
 }
 
 @keyframes hero-grid {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 140px 140px;
-  }
+  from { background-position: 0 0; }
+  to { background-position: 140px 140px; }
 }
 
 @keyframes hero-showcase-float {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-  50% {
-    transform: translate3d(0, -0.65rem, 0);
-  }
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -0.65rem, 0); }
 }
 
 @keyframes hero-screen-shine {
-  0%,
-  35% {
-    transform: translateX(-58%);
-    opacity: 0;
-  }
-  55% {
-    opacity: 0.75;
-  }
-  82%,
-  100% {
-    transform: translateX(58%);
-    opacity: 0;
-  }
+  0%, 35% { transform: translateX(-58%); opacity: 0; }
+  55% { opacity: 0.75; }
+  82%, 100% { transform: translateX(58%); opacity: 0; }
 }
 
 @keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 @keyframes float-soft {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 @keyframes reveal-static {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 14px, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
+  from { opacity: 0; transform: translate3d(0, 14px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 
 @keyframes mobile-menu-drop {
-  from {
-    opacity: 0;
-    transform: translate3d(0, -8px, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
+  from { opacity: 0; transform: translate3d(0, -8px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 
 @keyframes hero-bg-fade {
-  from {
-    opacity: 0;
-    transform: scale(1.015);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  from { opacity: 0; transform: scale(1.015); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;

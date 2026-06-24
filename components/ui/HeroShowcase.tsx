@@ -90,9 +90,9 @@ export function HeroShowcase() {
           <div className="border-t border-white/10 bg-ink/82 p-3 sm:p-4">
             <div className="flex flex-wrap items-center gap-2">
               {devices.slice(0, 5).map((device) => (
-                <span key={device} className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.055] px-3 py-1.5 text-xs text-platinum/72">
+                <span key={device.name} className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.055] px-3 py-1.5 text-xs text-platinum/72">
                   <MonitorSmartphone className="h-3.5 w-3.5 text-electric" aria-hidden="true" />
-                  {device}
+                  {device.name}
                 </span>
               ))}
               <span className="ml-auto hidden items-center gap-2 rounded-full border border-field/20 bg-field/10 px-3 py-1.5 text-xs font-semibold text-field sm:inline-flex">

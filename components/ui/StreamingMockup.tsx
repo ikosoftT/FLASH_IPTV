@@ -52,9 +52,9 @@ export function StreamingMockup() {
 
         <div className="mt-4 flex flex-wrap gap-2">
           {devices.slice(0, 6).map((device) => (
-            <span key={device} className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.055] px-3 py-1.5 text-xs text-platinum/70">
+            <span key={device.name} className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.055] px-3 py-1.5 text-xs text-platinum/70">
               <MonitorSmartphone className="h-3.5 w-3.5 text-electric" aria-hidden="true" />
-              {device}
+              {device.name}
             </span>
           ))}
         </div>

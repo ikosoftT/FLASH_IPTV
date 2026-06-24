@@ -5,7 +5,7 @@ import { BrandLogo } from "@/components/ui/BrandLogo";
 
 export function Footer() {
   return (
-    <footer id="disclaimer" className="border-t border-white/10 bg-ink/90">
+    <footer id="disclaimer" className="border-t border-white/10 bg-gradient-to-b from-ink/95 to-[#030408]">
       <Container className="py-14">
         <div className="grid gap-10 lg:grid-cols-[1.25fr_2fr]">
           <div>
@@ -19,11 +19,16 @@ export function Footer() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {Object.entries(footerLinks).map(([title, links]) => (
               <div key={title}>
-                <h2 className="text-sm font-semibold capitalize text-white">{title}</h2>
+                <h2 className="relative text-sm font-semibold capitalize text-white before:mb-2 before:block before:h-px before:w-6 before:bg-champagne/60">
+                  {title}
+                </h2>
                 <ul className="mt-4 space-y-3">
                   {links.map((link) => (
                     <li key={`${title}-${link.label}`}>
-                      <Link className="text-sm text-platinum/58 transition hover:text-champagne" href={link.href}>
+                      <Link
+                        className="relative text-sm text-platinum/58 transition-all duration-200 hover:translate-x-1 hover:text-champagne hover:drop-shadow-[0_0_8px_rgba(216,180,106,0.15)]"
+                        href={link.href}
+                      >
                         {link.label}
                       </Link>
                     </li>
@@ -34,7 +39,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-platinum/48 sm:flex-row sm:items-center sm:justify-between">
-          <p>Copyright {new Date().getFullYear()} {brand.name}. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} {brand.name}. All rights reserved.</p>
           <p>Secure streaming access. Premium setup. Clear support.</p>
         </div>
       </Container>

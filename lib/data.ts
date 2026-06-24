@@ -107,7 +107,15 @@ const remoteImages = {
   homeTvRoom:
     "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=1800&q=80",
   homeSportsNight:
-    "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=1800&q=80"
+    "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=1800&q=80",
+  premiumLivingRoom:
+    "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=80",
+  streamingSetup:
+    "https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1800&q=80",
+  worldCupStadium:
+    "https://images.unsplash.com/photo-1560272564-c83b4b6f90a0?auto=format&fit=crop&w=1800&q=80",
+  footballMatch:
+    "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1800&q=80"
 };
 
 const wikimediaFile = (fileName: string, width = 520) =>
@@ -116,11 +124,11 @@ const wikimediaFile = (fileName: string, width = 520) =>
 export const brand = {
   name: "Flash 4K IPTV",
   shortName: "Flash 4K",
-  tagline: "Match-day ready IPTV for every screen.",
+  tagline: "Premium IP Television. Elevated.",
   description:
-    "Premium IPTV access for live sports, football, movies, series, news, kids, and 26,000+ live channels with fast WhatsApp activation.",
-  primaryCta: "Get Started on WhatsApp",
-  secondaryCta: "View Packages",
+    "Premium IPTV delivering 26,000+ live channels, 100,000+ movies & series in crystal-clear 4K. Trusted by thousands for reliable sports, entertainment, and 24/7 support across every device.",
+  primaryCta: "Get Started",
+  secondaryCta: "View Plans",
   disclaimer:
     "Flash 4K IPTV is an independent streaming service platform. Channel availability and events may vary by region and package. We are not affiliated with FIFA, sports leagues, broadcasters, or third-party channel owners."
 };
@@ -149,7 +157,11 @@ export const homeImages = {
   moviesSeries: [remoteImages.channelsMovies],
   liveSports: [remoteImages.channelsSports],
   devicesLineup: [remoteImages.devices],
-  finalCtaBackground: [remoteImages.homeFinalMovieNight]
+  finalCtaBackground: [remoteImages.homeFinalMovieNight],
+  premiumLiving: [remoteImages.premiumLivingRoom],
+  streamingSetup: [remoteImages.streamingSetup],
+  worldCup: [remoteImages.worldCupStadium],
+  footballMatch: [remoteImages.footballMatch]
 };
 
 export const navLinks = [
@@ -333,16 +345,20 @@ export const streamingPosterCards = [
 ];
 
 export const devices = [
-  "Smart TV",
-  "Fire Stick",
-  "Android TV",
-  "iPhone & iPad",
-  "MAG Box",
-  "Windows / Mac",
-  "Android Mobile",
-  "Apple TV",
-  "Tablet",
-  "PC Player"
+  { name: "Android", icon: "android" },
+  { name: "Android TV", icon: "androidtv" },
+  { name: "Google TV", icon: "googletv" },
+  { name: "Fire TV / Stick", icon: "firetv" },
+  { name: "Apple TV", icon: "appletv" },
+  { name: "Samsung TV", icon: "samsung" },
+  { name: "LG TV", icon: "lg" },
+  { name: "Nvidia Shield", icon: "nvidia" },
+  { name: "Chromecast", icon: "chromecast" },
+  { name: "Roku", icon: "roku" },
+  { name: "MAG Box", icon: "mag" },
+  { name: "Smart TVs", icon: "smarttv" },
+  { name: "iPhone & iPad", icon: "ios" },
+  { name: "Windows / Mac", icon: "desktop" }
 ];
 
 export const pricingConfig = {
@@ -435,6 +451,16 @@ export const testimonials = [
     quote: "Good WhatsApp support, simple activation, and a clean channel guide experience on Android TV.",
     name: "Amelia S.",
     role: "Android TV viewer"
+  },
+  {
+    quote: "The World Cup setup guide helped me get everything ready before the tournament. Smooth streaming throughout.",
+    name: "Carlos M.",
+    role: "World Cup 2026 viewer"
+  },
+  {
+    quote: "I compared several IPTV providers and Flash 4K had the clearest pricing and fastest support response.",
+    name: "Sarah L.",
+    role: "First-time IPTV user"
   }
 ];
 
@@ -452,7 +478,7 @@ export const faqs = [
   {
     question: "Which devices are supported?",
     answer:
-      "Smart TV, Fire Stick, Android TV, iPhone, iPad, MAG Box, Windows, Mac, Android phones, tablets, and compatible IPTV player apps are supported."
+      "Smart TV (Samsung, LG, Sony), Fire TV Stick, Android TV, Google TV, Apple TV, Nvidia Shield, Chromecast, Roku, MAG Box, iPhone, iPad, Android phones, tablets, Windows PC, and Mac are all supported."
   },
   {
     question: "Does every plan include VOD and EPG?",
@@ -468,6 +494,16 @@ export const faqs = [
     question: "Is there a guarantee?",
     answer:
       "Plans include a 7-day money-back guarantee policy. Support will help resolve setup, access, and playback issues quickly during that period."
+  },
+  {
+    question: "What internet speed do I need for 4K streaming?",
+    answer:
+      "For 4K streaming, we recommend a stable 25 Mbps or higher connection. HD and FHD streams perform well on 10-15 Mbps stable connections."
+  },
+  {
+    question: "Do you offer a free trial?",
+    answer:
+      "Yes. Message us on WhatsApp to inquire about our free trial options and test the service on your device before committing."
   }
 ];
 
@@ -801,16 +837,16 @@ export const footerLinks = {
   support: [
     { label: "WhatsApp Support", href: "/support#contact" },
     { label: "Setup Guides", href: "/support#guides" },
-    { label: "FAQ", href: "/support#faq" }
+    { label: "FAQ", href: "/#faq" }
   ],
   legal: [
-    { label: "Terms placeholder", href: "/support#legal" },
-    { label: "Privacy placeholder", href: "/support#legal" },
+    { label: "Terms of Service", href: "/support#legal" },
+    { label: "Privacy Policy", href: "/support#legal" },
     { label: "Disclaimer", href: "/#disclaimer" }
   ],
   social: [
     { label: "Instagram", href: "#" },
-    { label: "X", href: "#" },
+    { label: "X (Twitter)", href: "#" },
     { label: "YouTube", href: "#" }
   ]
 };

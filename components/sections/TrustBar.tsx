@@ -8,8 +8,11 @@ export function TrustBar() {
       <Container>
         <div className="grid gap-4 py-5 sm:grid-cols-2 lg:grid-cols-4">
           {trustItems.map((item) => (
-            <div key={item} className="flex items-center justify-center gap-3 text-sm font-medium text-platinum/70">
-              <span className="h-2 w-2 rounded-full bg-champagne" aria-hidden="true" />
+            <div
+              key={item}
+              className="trust-chip flex items-center justify-center gap-3 text-sm font-medium text-platinum/70 transition-colors duration-300 hover:text-platinum/90"
+            >
+              <span className="h-2 w-2 rounded-full bg-champagne shadow-[0_0_8px_rgba(216,180,106,0.4)]" aria-hidden="true" />
               {item}
             </div>
           ))}

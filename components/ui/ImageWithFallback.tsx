@@ -48,13 +48,12 @@ export function ImageWithFallback({
   const [index, setIndex] = useState(0);
   const [failed, setFailed] = useState(false);
   const currentSrc = candidates[index];
-  const showImage = Boolean(currentSrc) && !failed;
 
   return (
     <div className={cn("relative overflow-hidden", className)}>
-      {showImage ? (
+      {currentSrc && !failed ? (
         <Image
-          src={currentSrc}
+          src={currentSrc!}
           alt={alt}
           fill
           sizes={sizes}
